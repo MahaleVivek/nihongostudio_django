@@ -1,0 +1,100 @@
+{% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'posts/style.css' %}" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+
+        <nav class="nav_bar">
+          <div class="logo">
+            <span class="s1">Nihongo</span><span class="s2">Studio</span>
+            <a href="{% url 'login' %}" target="_blank"><i class="fa fa-user-circle" aria-hidden="true" style="float: right;font-size: 40px;color: white;"></i></a>
+          </div>
+          
+        </nav>
+
+<!-- <ul>
+  {% for post in object_list %}
+    <h2>{{ post.title }}</h2>
+    <button>
+      <a href="{{ post.cover.url}}" download="{{ post.cover.url}}" alt="{{ post.title }}">Download</a>
+    </button>
+  {% endfor %}
+</ul> -->
+<div id="intro_paragraph">
+<p>Achieving full fluency of a language requires not just learning the language but regularly applying what you learned by listening, speaking, reading, and writing. There are many online tools such as online dictionaries that will help you read and watch Japanese books, comics, and movies. There are also sites that will help you connect with native Japanese speakers for language exchange as well as other sites that will help with correcting your writing. These tutorials go over how to use these various tools to effectively learn Japanese online.</p>
+</div>
+<table class="table" id="dataTable" width="50%">
+    <thead>
+      <tr>
+        <th>File Name</th>
+        <th>View</th>
+        <th>Download</th>
+      </tr>
+    <tbody>
+
+      {% for post in object_list %}
+
+      <tr>
+        <td>
+            <h2 style="font-size: 18px; font-weight:bold;">{{ post.title }}</h2>
+        </td>
+
+        <td>
+          <a href="{{ post.cover.url}}" target='_blank' alt="{{ post.title }}">View PDF</a>
+        </td>
+
+        <td>
+          <button class="btn">
+              <a href="{{ post.cover.url}}" download="{{ post.cover.url}}" alt="{{ post.title }}" style="text-decoration: none;color:#FFFFFF;">Download PDF</a>
+          </button>
+        {% endfor %}
+        </td> 
+      </tr>
+
+    </tbody> 
+   </thead>
+  </table>
+
+  
+ <footer class="footer-distributed">
+
+  <div class="footer-left">
+
+    <h3><span class="s1">Nihongo</span><span class="s2">Studio</span></h3>
+
+ <!--    <p class="footer-links">
+      <a href="#">Home</a>
+      ·
+      <a href="#">Study Material</a>
+      ·
+      <a href="#">Services</a>
+      ·
+      <a href="#">About</a>
+      .
+      <a href="#">Contact</a>
+    </p>
+ -->
+ <p class="footer-company-name">Sampda | Trupti | Vivek</p>
+
+    <div class="footer-icons">
+
+      <a href="#"><i class="fa fa-facebook"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+      <a href="#"><i class="fa fa-linkedin"></i></a>
+      <a href="https://github.com/trupti-jagtap/NihongoStudio-v1" target="_blank"><i class="fa fa-github"></i></a>
+      
+      
+    </div>
+    <br>
+    <p class="footer-company-name" style="text-align: center;"><strong>NihongoStudio © 2021</strong></p>
+  </div>
+
+  <!-- <div class="footer-right">
+    <p>Contact Us</p>
+    <form action="#" method="post">
+      <input type="text" name="email" placeholder="Email">
+      <textarea name="message" placeholder="Message"></textarea>
+      <button>Send</button>
+    </form>
+  </div> -->
+
+</footer>

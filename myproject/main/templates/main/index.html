@@ -1,0 +1,12 @@
+{% extends 'main/layout.html' %}
+
+{% block body %}
+    <h1>Nihongo Studio Blogs</h1>
+    <ul>
+        {% for m in main %}
+            <div>
+                <li><h4>Blog: {{ m }} </h4></li>
+            </div>
+        {% endfor%}
+    </ul>
+{% endblock  %}

@@ -1,0 +1,27 @@
+{% extends 'users/layout.html' %}
+
+{% block body %}
+
+<span class='head'>Nihongo</span><span class='sec'>Studio</span>
+
+        {% if message %}
+            <div>{{ message }}</div>
+        {% endif %}
+
+    <form action="{% url 'login' %}" method="post">
+        <div class="container">
+            
+            <h2>Sign in</h2>
+
+            {% csrf_token %}
+
+            <input type="text" name="username" placeholder="Username">
+            <input type="password" name="password" placeholder="Password">
+            <button type="submit" value="Login">Login</button>
+
+            <h4>Forgot password ?</h4>
+
+        </div>
+    </form>
+
+{% endblock %}
